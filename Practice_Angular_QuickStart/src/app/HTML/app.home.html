@@ -1,10 +1,33 @@
+<!-- 1) Here In this Example [disabled] is used for property binding receiving the boolena type from a
+  "buttonClick" property in app.component.ts
+
+2) (Click) is used for event binding calling a method in app.component.ts 
+   and receving the string interpolation of the property.
+
+3) (input) is also used for event binding but here we are passing the event
+    and fetching the value particpatied in the event to HTML again.[Sent through HTML and fecrhed by HTML]
+
+4)($event) is an reserve word which gives access to event data by capturing it.
+           It records each and very key stroke (eg : Test , using key board we entered in input field
+          means 4 key strokes)
+      eg : In case of input field it will give the value in the text field.
+           In case of click it will host the co-ordinate we clicked. -->
+    
 <br>
 <p style = "color: #369;font-family: Arial, Helvetica, sans-serif;font-size: 100%;font-weight: bold;margin:0 30px;">
     Type your name in the box </p>
 <br>
-<input type = "text" [(ngModel)] = "name" style ="margin:0 30px;"/>
+<input type = "text" class = "form-control" (input) = "onUserTest($event)"
+   style ="margin:0 30px;"/>
 <br><br>
 <p style ="margin:0 30%;"> Welcome {{name}}</p>
 <br>
-<button type="button" class="btn btn-warning" [disabled] = "!buttonClick" style ="margin:0 30%;"> 
-    Click me !! </button>
+<button type="button" class="btn btn-warning" [disabled] = "!buttonClick" style ="margin:0 30%;"
+     (click)="onClick()"> 
+    Click me !! </button> 
+    <!-- <p *ngIf = "buttonClick" >Button is Clicked by {{name}} </p>
+    To show the innerText attribute I have done the below line please neglect
+    <p [hidden] = "!buttonClick" [innerText] = "name" ></p>  -->
+    <p>{{name}} {{  textNote}}</p>
+<br>
+

@@ -6,3 +6,13 @@ h1 {
   margin : 0 20%;
 }
 
+.progress{
+  margin : 200px 400px;
+}
+
+#text{
+  margin : 50px 400px;
+  color :#DC4615;
+  font-size: 160%;
+
+}

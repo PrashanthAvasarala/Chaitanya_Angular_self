@@ -24,16 +24,27 @@ AppComponent = __decorate([
 ], AppComponent);
 exports.AppComponent = AppComponent;
 var HomeComponent = (function () {
-    //Just like Java constructor is invoke first as when the component is created
-    // In ECMA script 6 when write function() {body} as () => {} also
+    //Just like Java constructor is invoked first when complied same as when the component is created this 
+    // constructor is invoked first
+    // In ECMA script 6 when write function() {body} also as () => {} 
     function HomeComponent() {
         var _this = this;
         this.name = ' ';
         this.buttonClick = false;
+        this.textNote = " You didn't Click the button,please click !";
         setTimeout(function () {
             _this.buttonClick = true;
         }, 5000);
     }
+    HomeComponent.prototype.onClick = function () {
+        this.textNote = " Clicked the button Hurray!";
+    };
+    /*The value passed in the event is stored in target folder and then in value attribute
+      1)For more reference about the below syntax refer "passing and using data with event binding"
+          Section 2 lecture 28 UDEMY*/
+    HomeComponent.prototype.onUserTest = function (event) {
+        this.name = event.target.value;
+    };
     return HomeComponent;
 }());
 HomeComponent = __decorate([
