@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'my-app',
   //template: `<h1>Welcome {{name}}</h1>`,
   templateUrl : './HTML/app.component.html',
-  styleUrls : ['./HTML/app.component.css','styles.css'],
+  styleUrls : ['./HTML/app.component.css'],
 })
 export class AppComponent { 
    
@@ -12,17 +12,14 @@ export class AppComponent {
 
  @Component({
   selector: 'my-home',
-  templateUrl : './HTML/app.home.html', // we can write three to four lines of HTML code in template as well
- /*  template : `<br>
-  <input type = "text" [(ngModel)] = "name"/>
-  <br><br>
-  <p> Welcome {{name}}</p>`, */
+  templateUrl : './HTML/app.home.html',
   styleUrls : ['./HTML/app.component.css'],
   
 })
 
 export class HomeComponent{
    name:any = ' ';
+<<<<<<< HEAD
    buttonClick = false;
    textNote = " You didn't Click the button,please click !";
    
@@ -48,4 +45,6 @@ export class HomeComponent{
   }
 
 
+=======
+>>>>>>> parent of 7b71f44... See README.md
 }
