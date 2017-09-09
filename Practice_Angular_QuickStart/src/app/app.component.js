@@ -5,6 +5,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 var core_1 = require("@angular/core");
 var AppComponent = (function () {
     function AppComponent() {
@@ -21,22 +24,17 @@ AppComponent = __decorate([
 ], AppComponent);
 exports.AppComponent = AppComponent;
 var HomeComponent = (function () {
-<<<<<<< HEAD
     //Just like Java constructor is invoked first when complied same as when the component is created this 
     // constructor is invoked first
     // In ECMA script 6 when write function() {body} also as () => {} 
-=======
->>>>>>> parent of 7b71f44... See README.md
     function HomeComponent() {
+        var _this = this;
         this.name = ' ';
-<<<<<<< HEAD
         this.buttonClick = false;
         this.textNote = " You didn't Click the button,please click !";
         setTimeout(function () {
             _this.buttonClick = true;
         }, 5000);
-=======
->>>>>>> parent of 7b71f44... See README.md
     }
     HomeComponent.prototype.onClick = function () {
         this.textNote = " Clicked the button Hurray!";
@@ -54,7 +52,8 @@ HomeComponent = __decorate([
         selector: 'my-home',
         templateUrl: './HTML/app.home.html',
         styleUrls: ['./HTML/app.component.css'],
-    })
+    }),
+    __metadata("design:paramtypes", [])
 ], HomeComponent);
 exports.HomeComponent = HomeComponent;
 //# sourceMappingURL=app.component.js.map

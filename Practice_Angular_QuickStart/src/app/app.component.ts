@@ -19,7 +19,6 @@ export class AppComponent {
 
 export class HomeComponent{
    name:any = ' ';
-<<<<<<< HEAD
    buttonClick = false;
    textNote = " You didn't Click the button,please click !";
    
@@ -45,6 +44,4 @@ export class HomeComponent{
   }
 
 
-=======
->>>>>>> parent of 7b71f44... See README.md
 }
