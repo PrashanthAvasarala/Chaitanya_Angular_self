@@ -3,8 +3,8 @@ Installing and adding the BootStrap with Angular 4 Quick Start
 1) Run the cmd "npm install ngx-bootstrap --save" on the project Terminal.
 2) Add this in 
 /*
-<!--- index.html -->
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet">*/
+#<!--- index.html -->
+#<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet">*/
 3) In the systemjs.config.js add this in the "map"
  'moment': 'node_modules/moment/moment.js',
   'ng2-bootstrap/ng2-bootstrap': 'node_modules/ng2-bootstrap/bundles/ng2-bootstrap.umd.js',
