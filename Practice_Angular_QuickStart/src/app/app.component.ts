@@ -18,9 +18,10 @@ export class AppComponent {
 })
 
 export class HomeComponent{
-   name:any = ' ';
-   buttonClick = false;
-   textNote = " You didn't Click the button,please click !";
+   name:any = "";
+   buttonClick:boolean = false;
+   textNote:any = " ";
+   textChange:any = "";
    
 
   //Just like Java constructor is invoked first when complied same as when the component is created this 
@@ -31,17 +32,49 @@ export class HomeComponent{
           this.buttonClick = true;
                     },5000)
    } 
-   
-   onClick():void{
-         this.textNote = " Clicked the button Hurray!";
-       }
-      
-  /*The value passed in the event is stored in target folder and then in value attribute
+
+   /*The value passed in the event is stored in target folder and then in value attribute
     1)For more reference about the below syntax refer "passing and using data with event binding"
         Section 2 lecture 28 UDEMY*/
   onUserTest(event : Event):void{
-     this.name = (<HTMLInputElement>event.target).value;
-  }
+    /*console.log(event); in the console open event ->target->validity->value*/
+    this.name = (<HTMLInputElement>event.target).value;
+ }
+   
+   onClick():void{
+    console.log(this.name.length);
+    console.log(this.name.charAt(0));
+    console.log(this.name.toString().trim());
+       if(this.name == "")
+        {
+          console.log("hi");
+          this.textNote = "User Please enter your name";
+        }
+        else{
+          console.log("hello");
+         this.textNote = this.name + " Clicked the button Hurray!";
+       }
+      }
+
+      reset():void{
+           this.textNote = "";
+           this.name = "";
+      }
+  
+       nameChange(event:Event):void{
+        this.textChange = (<HTMLInputElement>event.target).value;
+        let temp = this.textChange.toString().trim();
+        let count = 0;
+        do{
+          /*temp.charAt(count) == 's'*/
+          if(1){
+            temp[count] = '$' ;
+          }
+          count++;
+        }while(count <= temp.length)
 
 
+      } 
+
+ 
 }
