@@ -45,9 +45,9 @@ var HomeComponent = (function () {
         this.name = event.target.value;
     };
     HomeComponent.prototype.onClick = function () {
-        console.log(this.name.length);
-        console.log(this.name.charAt(0));
-        console.log(this.name.toString().trim());
+        console.log(this.textChange.length);
+        console.log(this.textChange.charAt(0));
+        console.log(this.textChange.toString().trim());
         if (this.name == "") {
             console.log("hi");
             this.textNote = "User Please enter your name";
@@ -60,18 +60,26 @@ var HomeComponent = (function () {
     HomeComponent.prototype.reset = function () {
         this.textNote = "";
         this.name = "";
+        this.textChange = "";
     };
     HomeComponent.prototype.nameChange = function (event) {
-        this.textChange = event.target.value;
-        var temp = this.textChange.toString().trim();
-        var count = 0;
-        do {
-            /*temp.charAt(count) == 's'*/
-            if (1) {
-                temp[count] = '$';
+        /*         this.textChange = (<HTMLInputElement>event.target).value;
+                let temp : String[] = this.textChange.toString().trim();
+                let count = 0;
+                do{
+                  /*temp.charAt(count) == 's'*/
+        /* if(1){
+              temp[count] = '$' ;
             }
             count++;
-        } while (count <= temp.length);
+          }while(count <= temp.length)
+   */
+        var c = this.textChange;
+        //console.log(this.textChange);
+        c = c.replace(/i/g, "!");
+        c = c.replace("s", "$");
+        c = c.replace("a", "@");
+        console.log(c);
     };
     return HomeComponent;
 }());

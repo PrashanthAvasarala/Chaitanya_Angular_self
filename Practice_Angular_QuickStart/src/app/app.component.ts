@@ -42,9 +42,9 @@ export class HomeComponent{
  }
    
    onClick():void{
-    console.log(this.name.length);
-    console.log(this.name.charAt(0));
-    console.log(this.name.toString().trim());
+    console.log(this.textChange.length);
+    console.log(this.textChange.charAt(0));
+    console.log(this.textChange.toString().trim());
        if(this.name == "")
         {
           console.log("hi");
@@ -59,20 +59,27 @@ export class HomeComponent{
       reset():void{
            this.textNote = "";
            this.name = "";
+           this.textChange="";
       }
   
        nameChange(event:Event):void{
-        this.textChange = (<HTMLInputElement>event.target).value;
-        let temp = this.textChange.toString().trim();
+/*         this.textChange = (<HTMLInputElement>event.target).value;
+        let temp : String[] = this.textChange.toString().trim();
         let count = 0;
         do{
           /*temp.charAt(count) == 's'*/
-          if(1){
+      /* if(1){
             temp[count] = '$' ;
           }
           count++;
         }while(count <= temp.length)
-
+ */
+        var c = this.textChange;
+        //console.log(this.textChange);
+        c = c.replace(/i/g, "!");
+        c = c.replace("s", "$");
+        c = c.replace("a", "@");
+        console.log(c);
 
       } 
 
