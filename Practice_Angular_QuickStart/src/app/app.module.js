@@ -16,12 +16,14 @@ var products_component_1 = require("./products.component");
 var variables_component_1 = require("./Variables/variables.component");
 var PageNotFoundComponent_1 = require("./PageNotFoundComponent");
 var directive_component_1 = require("./Directives/directive.component");
+var assignment1_component_1 = require("./Assignment/assignment1.component");
 var appRoutes = [
     { path: '', component: app_component_1.HomeComponent },
     { path: 'fruit', component: fruits_component_1.FruitComponent },
     { path: 'product', component: products_component_1.ProductComponent },
     { path: 'profile', component: variables_component_1.VariableComponent },
     { path: 'directive', component: directive_component_1.DirectiveComponent },
+    { path: 'assignment1', component: assignment1_component_1.AssignmentOneComponent },
     { path: '**', component: PageNotFoundComponent_1.PageNotFoundComponent },
 ];
 var AppModule = (function () {
@@ -40,7 +42,8 @@ AppModule = __decorate([
             fruits_component_1.FruitComponent,
             variables_component_1.VariableComponent,
             PageNotFoundComponent_1.PageNotFoundComponent,
-            directive_component_1.DirectiveComponent],
+            directive_component_1.DirectiveComponent,
+            assignment1_component_1.AssignmentOneComponent],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);

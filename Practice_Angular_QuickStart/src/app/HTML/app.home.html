@@ -17,24 +17,7 @@
 <p style = "color: #369;font-family: Arial, Helvetica, sans-serif;font-size: 100%;font-weight: bold;margin:0 30px;">
     Type your name in the box </p>
 <br>
-<form method = "get" action = "" >
-<input type = "text" name = "input" class = "form-control" (input) = "onUserTest($event)" [(ngModel)] = "name" 
-     style ="margin:0 30px;"/>
-<br><br> 
-<input type = "text" name = "textChange"  (input) = "nameChange($event)" [(ngModel)] = "textChange" style ="margin:0 30px;"/>
-<br><br>
+
+<input type = "text" class = "form-control"  [(ngModel)] = "name" style ="margin:0 30px;"/>
 <p style ="margin:0 30%;"> Welcome {{name}}</p>
 <br>
-<p>
-<button type="button" class="btn btn-warning" [disabled] = "!buttonClick" (click)="onClick()" style = "margin-left:30%;">  Click me !! </button> 
-<button type="button" class="btn btn-warning" [disabled] = "!buttonClick" (click)="reset()" style ="padding-left:10px;">   Reset !! </button> 
-<button type="button" class="btn btn-warning" [disabled] = "!buttonClick"  (click)="onClick()" style = "padding-left:10px;" >   Text Change !! </button> 
-</p>
-</form>
-    <!-- <p *ngIf = "buttonClick" >Button is Clicked by {{name}} </p>
-    To show the innerText attribute I have done the below line please neglect
-    <p [hidden] = "!buttonClick" [innerText] = "name" ></p>  -->
-    <p>{{textNote}}</p>
-    <p>{{textChange}}</p>
-<br>
-

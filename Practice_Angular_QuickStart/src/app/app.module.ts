@@ -11,6 +11,7 @@ import { ProductComponent } from './products.component';
 import { VariableComponent } from './Variables/variables.component';
 import { PageNotFoundComponent } from './PageNotFoundComponent';
 import {DirectiveComponent} from './Directives/directive.component';
+import {AssignmentOneComponent} from './Assignment/assignment1.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -18,6 +19,7 @@ const appRoutes: Routes = [
   { path: 'product', component: ProductComponent },
   { path: 'profile', component: VariableComponent },  
   { path: 'directive', component: DirectiveComponent },
+  { path: 'assignment1', component: AssignmentOneComponent },
   { path: '**', component: PageNotFoundComponent },  ]
                              
 
@@ -31,7 +33,8 @@ const appRoutes: Routes = [
                  FruitComponent,
                  VariableComponent,
                  PageNotFoundComponent,
-                 DirectiveComponent],
+                 DirectiveComponent,
+                 AssignmentOneComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
