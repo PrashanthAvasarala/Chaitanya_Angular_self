@@ -46,7 +46,7 @@ export class AssignmentOneComponent {
    this.text = this.text.replace(/i/g, "!");
    this.text = this.text.replace(/s/g, "$");
    this.text = this.text.replace(/a/g, "@");
-    
+     
 
   }
 
