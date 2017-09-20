@@ -6,7 +6,13 @@
 <p [hidden] = 'tempValue' [ngStyle] = "textStyle()">{{textParam}}</p>
 
 <table border = "1">
-    <tr *ngFor = "let time of timeStamp">
-        <td><p>You clicked this button for the {{buttonClicks}} time at {{time}} milliSeconds</p></td>
+    <tr *ngFor = "let time of timeStamp" >
+        <td><p>You clicked this button for the {{count}} time at {{time}} milliSeconds</p></td>
+    </tr>
+</table>
+
+<table border = "1">
+    <tr *ngFor = "let count of clicks" >
+        <td><p>You clicked this button for the {{count}} </p></td>
     </tr>
 </table>

@@ -10,11 +10,12 @@ let AssignmentTwoComponent = class AssignmentTwoComponent {
     constructor() {
         this.textParam = " ";
         this.timeStamp = [];
+        this.clicks = [];
     }
     ngOnInit() {
         this.tempValue = false;
         this.counter = 1;
-        this.buttonClicks = 0;
+        this.buttonClicks = 1;
     }
     textStyle() {
         let myStles = {
@@ -34,7 +35,7 @@ let AssignmentTwoComponent = class AssignmentTwoComponent {
         this.timeStamp.push(event.timeStamp);
         ((this.counter % 2) == 0) ? this.tempValue = true : this.tempValue = false;
         this.counter++;
-        this.buttonClicks++;
+        this.clicks.push(this.buttonClicks++);
         this.textParam = " '\Secret Password = tune\' ";
     }
 };

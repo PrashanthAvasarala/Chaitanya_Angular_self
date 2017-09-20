@@ -13,11 +13,12 @@ export class AssignmentTwoComponent{
     tempValue :boolean;
     counter : number;
     timeStamp: any[] = [];
+    clicks: any[] = [];
     buttonClicks:number;
     ngOnInit(){
         this.tempValue = false ;
         this.counter = 1;
-        this.buttonClicks = 0;
+        this.buttonClicks = 1;
     }
     
     textStyle() : any {
@@ -41,7 +42,7 @@ export class AssignmentTwoComponent{
          this.timeStamp.push(event.timeStamp);
          ((this.counter % 2) == 0)? this.tempValue = true : this.tempValue = false ;
          this.counter++;
-         this.buttonClicks++;
+         this.clicks.push(this.buttonClicks++);
          this.textParam = " '\Secret Password = tune\' ";
     }
 }
