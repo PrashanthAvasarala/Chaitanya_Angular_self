@@ -5,9 +5,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var core_1 = require("@angular/core");
-var VariableComponent = (function () {
-    function VariableComponent() {
+const core_1 = require("@angular/core");
+let VariableComponent = class VariableComponent {
+    constructor() {
         /*
             number
             string
@@ -33,16 +33,15 @@ var VariableComponent = (function () {
         this.users = { name: 'Prashanth', tech: 'angularJs', area: 'USA', Stage: 'Learning' };
         this.a = null;
     }
-    VariableComponent.prototype.callMe = function () {
+    callMe() {
         console.log('hello');
-    };
-    return VariableComponent;
-}());
+    }
+};
 VariableComponent = __decorate([
     core_1.Component({
         selector: 'my-variable',
         /*template: `<h1>variable Page</h1>`,*/
-        templateUrl: "./variable.component.html",
+        templateUrl: `./variable.component.html`,
     })
 ], VariableComponent);
 exports.VariableComponent = VariableComponent;

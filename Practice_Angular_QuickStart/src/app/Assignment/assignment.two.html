@@ -1,2 +1,12 @@
-<h1> Please test this button</h1>
-<input type = "button" value = "Display Details" />
+<h1 [ngStyle] = " textStyle()"> Please test this button</h1>
+<input type = "button"  class="btn btn-outline-success" 
+       (click) = 'displayButtonClick($event)' [ngStyle] = 'buttonStyle()'
+       value = "Display Details"  />
+
+<p [hidden] = 'tempValue' [ngStyle] = "textStyle()">{{textParam}}</p>
+
+<table border = "1">
+    <tr *ngFor = "let time of timeStamp">
+        <td><p>You clicked this button for the {{buttonClicks}} time at {{time}} milliSeconds</p></td>
+    </tr>
+</table>

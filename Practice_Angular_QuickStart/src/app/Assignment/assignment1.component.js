@@ -8,53 +8,51 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var AssignmentOneComponent = (function () {
+const core_1 = require("@angular/core");
+let AssignmentOneComponent = class AssignmentOneComponent {
     /* Just like Java constructor is invoked first when complied same as when the component is created this
      constructor is invoked first
      In ECMA script 6 when write function() {body} also as () => {}  */
-    function AssignmentOneComponent() {
-        var _this = this;
+    constructor() {
         this.name = "";
         this.text = "";
         this.buttonClick = false;
         this.textNote = " ";
         this.textChange = "";
-        setTimeout(function () {
-            _this.buttonClick = true;
+        setTimeout(() => {
+            this.buttonClick = true;
         }, 5000);
     }
-    AssignmentOneComponent.prototype.onClick = function () {
+    onClick() {
         if (this.name == "")
             this.textNote = "User Please enter your name";
         else
             this.textNote = this.name + " Clicked the button Hurray!";
-    };
+    }
     /*The value passed in the event is stored in target folder and then in value attribute
     1)For more reference about the below syntax refer "passing and using data with event binding"
         Section 2 lecture 28 UDEMY*/
-    AssignmentOneComponent.prototype.nameChange = function (event) {
+    nameChange(event) {
         /*console.log(event); in the console open event ->target->validity->value*/
         this.text = event.target.value;
         //console.log(this.textChange);
         this.text = this.text.replace(/i/g, "!");
         this.text = this.text.replace(/s/g, "$");
         this.text = this.text.replace(/a/g, "@");
-    };
-    AssignmentOneComponent.prototype.onTextChange = function () {
+    }
+    onTextChange() {
         if (this.text == "")
             this.textChange = "User Please enter text in second input field";
         else
             this.textChange = this.text + " Your text has been changed";
-    };
-    AssignmentOneComponent.prototype.reset = function () {
+    }
+    reset() {
         this.textNote = "";
         this.name = "";
         this.textChange = "";
         this.text = "";
-    };
-    return AssignmentOneComponent;
-}());
+    }
+};
 AssignmentOneComponent = __decorate([
     core_1.Component({
         selector: 'my-assign1',
