@@ -18,6 +18,7 @@ const PageNotFoundComponent_1 = require("./PageNotFoundComponent");
 const directive_component_1 = require("./Directives/directive.component");
 const assignment1_component_1 = require("./Assignment/assignment1.component");
 const assignment2_component_1 = require("./Assignment/assignment2.component");
+const assignment3_component_1 = require("./Assignment/assignment3.component");
 const appRoutes = [
     { path: '', component: app_component_1.HomeComponent },
     { path: 'fruit', component: fruits_component_1.FruitComponent },
@@ -26,6 +27,7 @@ const appRoutes = [
     { path: 'directive', component: directive_component_1.DirectiveComponent },
     { path: 'assignment1', component: assignment1_component_1.AssignmentOneComponent },
     { path: 'assignment2', component: assignment2_component_1.AssignmentTwoComponent },
+    { path: 'assignment3', component: assignment3_component_1.AssignmentThreeComponent },
     { path: '**', component: PageNotFoundComponent_1.PageNotFoundComponent },
 ];
 let AppModule = class AppModule {
@@ -34,7 +36,8 @@ AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule,
             router_1.RouterModule.forRoot(appRoutes),
-            forms_1.FormsModule],
+            forms_1.FormsModule,
+            forms_1.ReactiveFormsModule],
         declarations: [app_component_1.AppComponent,
             app_component_1.HomeComponent,
             products_component_1.ProductComponent,
@@ -43,7 +46,8 @@ AppModule = __decorate([
             PageNotFoundComponent_1.PageNotFoundComponent,
             directive_component_1.DirectiveComponent,
             assignment1_component_1.AssignmentOneComponent,
-            assignment2_component_1.AssignmentTwoComponent],
+            assignment2_component_1.AssignmentTwoComponent,
+            assignment3_component_1.AssignmentThreeComponent],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);

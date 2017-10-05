@@ -3,7 +3,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {RouterModule, Routes} from '@angular/router';
-import {FormsModule} from '@angular/forms';
+import {FormsModule , ReactiveFormsModule} from '@angular/forms';
+
 
 import { AppComponent,HomeComponent } from './app.component';
 import { FruitComponent } from './fruits.component';
@@ -13,6 +14,7 @@ import { PageNotFoundComponent } from './PageNotFoundComponent';
 import {DirectiveComponent} from './Directives/directive.component';
 import {AssignmentOneComponent} from './Assignment/assignment1.component';
 import {AssignmentTwoComponent} from './Assignment/assignment2.component';
+import {AssignmentThreeComponent} from './Assignment/assignment3.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -22,13 +24,15 @@ const appRoutes: Routes = [
   { path: 'directive', component: DirectiveComponent },
   { path: 'assignment1', component: AssignmentOneComponent },
   { path: 'assignment2', component: AssignmentTwoComponent },
+  { path: 'assignment3', component: AssignmentThreeComponent },
   { path: '**', component: PageNotFoundComponent },  ]
                              
 
 @NgModule({
   imports: [BrowserModule,
             RouterModule.forRoot(appRoutes),
-            FormsModule],
+            FormsModule,
+            ReactiveFormsModule],
   declarations: [AppComponent,
                  HomeComponent,
                  ProductComponent,
@@ -37,7 +41,8 @@ const appRoutes: Routes = [
                  PageNotFoundComponent,
                  DirectiveComponent,
                  AssignmentOneComponent,
-                 AssignmentTwoComponent],
+                 AssignmentTwoComponent,
+                 AssignmentThreeComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

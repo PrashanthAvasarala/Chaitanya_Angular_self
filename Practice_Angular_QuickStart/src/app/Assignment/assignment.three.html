@@ -1,0 +1,49 @@
+<!--
+  Angular Form Validation tutorial - "http://cuppalabs.github.io/tutorials/how-to-implement-angular2-form-validations/"
+
+-->
+<form [formGroup]="entryForm" (ngSubmit)="onSubmit()" novalidate>
+       
+      
+        
+        <div class="form-group">
+            <label class="center-block"> First Name:
+              <input class="form-control" formControlName="fname">
+            </label>
+        </div>
+        <p *ngIf = "entryForm.get('fname').hasError('pattern')"> Name is invalid</p>
+
+        <div class="form-group">
+                <label class="center-block"> Last Name:
+                  <input class="form-control" formControlName="lname">
+                </label>
+        </div>
+      
+        <div class="form-group">
+                    <label class="center-block"> Age :
+                      <input class="form-control" formControlName="age">
+                    </label>
+                    
+                </div>
+        <div class="form-group">
+                        <label class="center-block"> Email :
+                          <input class="form-control" formControlName="email">
+                        </label>
+        </div>
+
+        <div class="form-group">
+                            <label class="center-block"> Password :
+                              <input class="form-control" formControlName="password">
+                            </label>
+        </div>
+              
+        
+       
+        <div style="margin-bottom: 1em">
+                <button type="submit"
+                        [disabled]="entryForm.valid" class="btn btn-success"> Submit </button> &nbsp;
+                <button type="reset" (click)="revert()"
+                        [disabled]="entryForm.pristine" class="btn btn-danger">Revert</button>
+              </div>
+      </form>
+      
