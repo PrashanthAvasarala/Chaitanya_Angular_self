@@ -33,8 +33,17 @@ export class AssignmentTwoComponent{
     buttonStyle() : any {
         let buttonStyle = {
             'margin' : '10px 0 0 500px',
+            
         }
         return buttonStyle;
+    }
+
+    secondButtonStyle() : any {
+        let secondButtonStyle = {
+            'margin' : '10px 0 0 0',
+            
+        }
+        return secondButtonStyle;
     }
 
     displayButtonClick(event: Event): void {
@@ -45,4 +54,11 @@ export class AssignmentTwoComponent{
          this.clicks.push(this.buttonClicks++);
          this.textParam = " '\Secret Password = tune\' ";
     }
+
+    reset(): void {
+        this.timeStamp  = [] ;
+        this.clicks = [] ;
+       this.textParam = null;
+        
+      }
 }

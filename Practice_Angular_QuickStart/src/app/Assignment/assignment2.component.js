@@ -30,6 +30,12 @@ let AssignmentTwoComponent = class AssignmentTwoComponent {
         };
         return buttonStyle;
     }
+    secondButtonStyle() {
+        let secondButtonStyle = {
+            'margin': '10px 0 0 0',
+        };
+        return secondButtonStyle;
+    }
     displayButtonClick(event) {
         console.log(event.timeStamp);
         this.timeStamp.push(event.timeStamp);
@@ -37,6 +43,11 @@ let AssignmentTwoComponent = class AssignmentTwoComponent {
         this.counter++;
         this.clicks.push(this.buttonClicks++);
         this.textParam = " '\Secret Password = tune\' ";
+    }
+    reset() {
+        this.timeStamp = [];
+        this.clicks = [];
+        this.textParam = null;
     }
 };
 AssignmentTwoComponent = __decorate([

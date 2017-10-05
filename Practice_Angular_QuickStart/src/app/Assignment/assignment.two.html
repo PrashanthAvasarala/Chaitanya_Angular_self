@@ -1,13 +1,16 @@
 <h1 [ngStyle] = " textStyle()"> Please test this button</h1>
-<input type = "button"  class="btn btn-outline-success" 
+<p><input type = "button"  class="btn btn-outline-success" 
        (click) = 'displayButtonClick($event)' [ngStyle] = 'buttonStyle()'
        value = "Display Details"  />
+ <input type = "button"  class="btn btn-outline-success" 
+       (click) = 'reset()' [ngStyle] = 'secondButtonStyle()'
+       value = "Reset"  /></p>
 
 <p [hidden] = 'tempValue' [ngStyle] = "textStyle()">{{textParam}}</p>
 
 <table border = "1">
     <tr *ngFor = "let time of timeStamp" >
-        <td><p>You clicked this button for the {{count}} time at {{time}} milliSeconds</p></td>
+        <td><p>You clicked this button  at {{time}} milliSeconds</p></td>
     </tr>
 </table>
 
