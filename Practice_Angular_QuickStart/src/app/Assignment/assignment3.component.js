@@ -8,8 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-/*Import the Form Builder , Form Group , validators
-  and Import ReactiveForms in module.ts
+/*Import the Form Builder , Form Group , validators from @angular/forms
+  and Import ReactiveForms in module.ts from @angular/forms
   Abstract Control  = Form Control + FormGroup
 
   UseFul Links For FormControl , FormBuilders , FormGroup - refernce :
@@ -24,6 +24,7 @@ How To write Custom Validations
    CustomValidation for Number Check - "https://ampersandacademy.com/tutorials/ionic-framework-version-2/how-to-write-the-custom-validation-function"
    Stack Over Flow (Min/Max validation) - "https://stackoverflow.com/questions/39847862/min-max-validator-in-angular-2-final/39848327"
 
+    How to write Custom Validator Classes : 'https://blog.thoughtram.io/angular/2016/03/14/custom-validators-in-angular-2.html'
 
 
 */
