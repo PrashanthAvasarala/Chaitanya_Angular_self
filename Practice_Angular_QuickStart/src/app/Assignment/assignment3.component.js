@@ -30,7 +30,14 @@ How To write Custom Validations
 */
 const core_1 = require("@angular/core");
 const forms_1 = require("@angular/forms");
+const assignment3_list_component_1 = require("./assignment3.list.component");
+const services_component_1 = require("./../Services/services.component");
 let AssignmentThreeComponent = class AssignmentThreeComponent {
+    /* firstName : any;
+    LastName: any;
+    age: any;
+    email : any;
+    password : any;  */
     /*
        With the formBuilder we can group the all the form Input  elements at once,
        No need of creating the
@@ -39,31 +46,52 @@ let AssignmentThreeComponent = class AssignmentThreeComponent {
        
       
     */
-    constructor(fb) {
+    constructor(fb, assignThreeListComp) {
         this.fb = fb;
+        this.assignThreeListComp = assignThreeListComp;
         this.createForm();
     }
     /*
         while using the regular expressions we can directly use '[a-zA-Z]+'  instead of  '/^[a-zA-Z]+$'
         No( /,^,$)
         Stack-Over-flow - "https://stackoverflow.com/questions/41768721/regex-in-angular-2-form-validators-producing-different-results-when-argument-is"
+        Cheat Sheet for RegExp : "http://www.rexegg.com/regex-quickstart.html"
     */
     createForm() {
         this.entryForm = this.fb.group({
-            fname: ['', forms_1.Validators.compose([forms_1.Validators.required, forms_1.Validators.pattern('[a-zA-Z]+')])],
-            lname: '',
-            age: '',
-            email: '',
-            password: ''
+            fname: ['', forms_1.Validators.compose([forms_1.Validators.required, forms_1.Validators.pattern('[A-Za-z\\s]+')])],
+            lname: ['', forms_1.Validators.compose([forms_1.Validators.required, forms_1.Validators.pattern('[A-Za-z\\s]+')])],
+            age: ['', forms_1.Validators.compose([forms_1.Validators.required, forms_1.Validators.pattern('([0]?[1-9]{1,2})+')])],
+            email: ['', forms_1.Validators.compose([forms_1.Validators.required, forms_1.Validators.pattern('([\\w-\.]+@([\\w-]+\.)+[\\w-])+')])],
+            password: ['', forms_1.Validators.compose([forms_1.Validators.required, forms_1.Validators.pattern("((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%])(?!.*\\s).{6,16})+")])]
         });
+    }
+    onSubmit() {
+        /*  this.firstName = this.entryForm.get('fname').value;
+         this.LastName = this.entryForm.get('lname').value;
+         this.age = this.entryForm.get('age').value;
+         this.email = this.entryForm.get('email').value;
+         this.password = this.entryForm.get('password').value; */
+        var entries = {
+            fname: this.entryForm.get('fname').value,
+            lname: this.entryForm.get('lname').value,
+            age: this.entryForm.get('age').value,
+            email: this.entryForm.get('email').value,
+            password: this.entryForm.get('password').value,
+        };
+        var conf = this.assignThreeListComp.createUser(entries);
+        window.alert("Successfully Inserted !!");
+        if (conf)
+            location.href = 'http://localhost:3000/assignment3/list';
     }
 };
 AssignmentThreeComponent = __decorate([
     core_1.Component({
         templateUrl: './assignment.three.html',
-        styles: ['.']
+        styles: ['.'],
+        providers: [assignment3_list_component_1.AssignmentThreeListComponent, services_component_1.DbConnComponent],
     }),
-    __metadata("design:paramtypes", [forms_1.FormBuilder])
+    __metadata("design:paramtypes", [forms_1.FormBuilder, assignment3_list_component_1.AssignmentThreeListComponent])
 ], AssignmentThreeComponent);
 exports.AssignmentThreeComponent = AssignmentThreeComponent;
 //# sourceMappingURL=assignment3.component.js.map

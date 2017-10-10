@@ -11,39 +11,44 @@
               <input class="form-control" formControlName="fname">
             </label>
         </div>
-        <p *ngIf = "entryForm.get('fname').hasError('pattern')"> Name is invalid</p>
+        <p *ngIf = "(entryForm.get('fname').hasError('pattern') || entryForm.get('fname').hasError('pattern'))"> First Name is invalid</p>
 
         <div class="form-group">
                 <label class="center-block"> Last Name:
                   <input class="form-control" formControlName="lname">
                 </label>
         </div>
-      
+        <p *ngIf = "(entryForm.get('lname').hasError('pattern') || entryForm.get('lname').hasError('pattern'))"> Last Name is invalid</p>
+
         <div class="form-group">
                     <label class="center-block"> Age :
                       <input class="form-control" formControlName="age">
                     </label>
-                    
-                </div>
+         </div>
+         <p *ngIf = "(entryForm.get('age').hasError('pattern') || entryForm.get('age').hasError('pattern'))"> age is invalid</p>
+
         <div class="form-group">
                         <label class="center-block"> Email :
                           <input class="form-control" formControlName="email">
                         </label>
         </div>
+        <p *ngIf = "(entryForm.get('email').hasError('pattern') || entryForm.get('email').hasError('pattern'))"> email is invalid</p>
 
         <div class="form-group">
                             <label class="center-block"> Password :
                               <input class="form-control" formControlName="password">
                             </label>
         </div>
-              
+        <p *ngIf = "(entryForm.get('password').hasError('pattern') || entryForm.get('password').hasError('pattern'))"> 
+          password is invalid - Please include one Number , One upper Case , One Lower Case , One Alpha Number Char !@#$% ,Minimum 6 in Length<span class="st-icon-ebay"></span> </p>      
         
        
         <div style="margin-bottom: 1em">
                 <button type="submit"
-                        [disabled]="entryForm.valid" class="btn btn-success"> Submit </button> &nbsp;
-                <button type="reset" (click)="revert()"
+                        [disabled]="!entryForm.valid" class="btn btn-success" > Submit </button> &nbsp;
+                <button type="reset" 
                         [disabled]="entryForm.pristine" class="btn btn-danger">Revert</button>
               </div>
+        <router-outlet></router-outlet>  
       </form>
       

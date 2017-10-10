@@ -1,0 +1,24 @@
+<table [ngStyle] = "tableData()" border="1">
+        <tr [ngStyle] = "tableData()" >
+            <th [ngStyle] = "tableData()" >Id</th>
+            <th [ngStyle] = "tableData()" >Fname</th>
+            <th [ngStyle] = "tableData()" >lname</th>
+            <th [ngStyle] = "tableData()" >age</th>
+            <th [ngStyle] = "tableData()" >Email</th>
+            <th [ngStyle] = "tableData()" >Password</th>
+            <th [ngStyle] = "tableData()" >Actoins</th>
+        </tr>
+        <tr *ngFor="let user of userData">
+            <td [ngStyle] = "tableData()" >{{user.id}}</td>
+            <td >{{user.fname}}</td>
+            <td >{{user.lname}}</td>
+            <td >{{user.age}}</td>
+            <td >{{user.email}}</td>
+            <td >{{user.password}}</td>
+            <td>
+                <span (click)="getSingleUser(user.id)">veiw</span> &nbsp;&nbsp;&nbsp;
+                <span (click)="updateUser(user.id)">update</span> &nbsp;&nbsp;&nbsp;
+                <span (click)="deleteUser(user.id)">delete</span> &nbsp;&nbsp;&nbsp;
+            </td>
+        </tr>
+    </table>
