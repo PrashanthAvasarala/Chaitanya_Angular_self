@@ -17,9 +17,7 @@ let viewSingleUser = class viewSingleUser extends assignment3_list_component_1.A
         super(dbConn);
         this.dbConn = dbConn;
         this.route = route;
-        this.route.queryParams.subscribe(params => {
-            this.userId = params["id"];
-        });
+        this.route.queryParams.subscribe(params => { this.userId = params["id"]; });
         this.viewUser(this.userId);
     }
 };

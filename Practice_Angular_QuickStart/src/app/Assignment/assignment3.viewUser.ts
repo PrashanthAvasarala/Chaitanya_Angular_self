@@ -18,10 +18,11 @@ export class viewSingleUser extends AssignmentThreeListComponent{
 
       userId : any;
          constructor(public dbConn : DbConnComponent , private route: ActivatedRoute ) {            
-               super(dbConn);
-               this.route.queryParams.subscribe( params => {
-                this.userId = params["id"];                
-            });
+              
+                    super(dbConn);
+                    this.route.queryParams.subscribe(params => 
+                        {this.userId = params["id"]; }               
+                        );
                this.viewUser(this.userId);
                             }
 
