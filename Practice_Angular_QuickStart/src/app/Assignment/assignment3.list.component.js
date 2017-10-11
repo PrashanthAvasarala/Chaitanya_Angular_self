@@ -27,18 +27,29 @@ let AssignmentThreeListComponent = class AssignmentThreeListComponent {
     displayListOfUsers() {
         this.dbConn.getListUsers()
             .subscribe((result) => {
-            console.log(result);
+            //console.log(result);
             this.userData = result.data;
-            console.log(this.userData);
+            //console.log(this.userData);
         });
+        return this.userData;
     }
     createUser(user) {
         console.log(user.fname);
         this.dbConn.insertUser(user)
             .subscribe((result) => {
             console.log(result.msg);
+            this.status = result.status;
         });
-        return true;
+        return this.status;
+    }
+    viewUser(id) {
+        console.log("hello");
+        this.dbConn.getSingleUser(id)
+            .subscribe((result) => {
+            this.userData = result.data;
+            this.status = result.status;
+        });
+        return this.userData;
     }
 };
 AssignmentThreeListComponent = __decorate([

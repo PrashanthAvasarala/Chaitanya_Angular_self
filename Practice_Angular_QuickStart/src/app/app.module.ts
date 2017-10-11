@@ -17,6 +17,7 @@ import {AssignmentOneComponent} from './Assignment/assignment1.component';
 import {AssignmentTwoComponent} from './Assignment/assignment2.component';
 import {AssignmentThreeComponent} from './Assignment/assignment3.component';
 import {AssignmentThreeListComponent} from './Assignment/assignment3.list.component';
+import {viewSingleUser} from './Assignment/assignment3.viewUser';
 
 
 
@@ -30,6 +31,7 @@ const appRoutes: Routes = [
   { path: 'assignment2', component: AssignmentTwoComponent },
   { path: 'assignment3', component: AssignmentThreeComponent },
   { path: 'assignment3/list', component: AssignmentThreeListComponent },
+  { path: 'assignment3/user', component: viewSingleUser },
   { path: '**', component: PageNotFoundComponent },  ]
                              
 
@@ -49,7 +51,8 @@ const appRoutes: Routes = [
                  AssignmentOneComponent,
                  AssignmentTwoComponent,
                  AssignmentThreeComponent,
-                 AssignmentThreeListComponent],
+                 AssignmentThreeListComponent,
+                 viewSingleUser],
                  
   bootstrap: [AppComponent]
 })

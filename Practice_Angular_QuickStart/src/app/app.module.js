@@ -21,6 +21,7 @@ const assignment1_component_1 = require("./Assignment/assignment1.component");
 const assignment2_component_1 = require("./Assignment/assignment2.component");
 const assignment3_component_1 = require("./Assignment/assignment3.component");
 const assignment3_list_component_1 = require("./Assignment/assignment3.list.component");
+const assignment3_viewUser_1 = require("./Assignment/assignment3.viewUser");
 const appRoutes = [
     { path: '', component: app_component_1.HomeComponent },
     { path: 'fruit', component: fruits_component_1.FruitComponent },
@@ -31,6 +32,7 @@ const appRoutes = [
     { path: 'assignment2', component: assignment2_component_1.AssignmentTwoComponent },
     { path: 'assignment3', component: assignment3_component_1.AssignmentThreeComponent },
     { path: 'assignment3/list', component: assignment3_list_component_1.AssignmentThreeListComponent },
+    { path: 'assignment3/user', component: assignment3_viewUser_1.viewSingleUser },
     { path: '**', component: PageNotFoundComponent_1.PageNotFoundComponent },
 ];
 let AppModule = class AppModule {
@@ -52,7 +54,8 @@ AppModule = __decorate([
             assignment1_component_1.AssignmentOneComponent,
             assignment2_component_1.AssignmentTwoComponent,
             assignment3_component_1.AssignmentThreeComponent,
-            assignment3_list_component_1.AssignmentThreeListComponent],
+            assignment3_list_component_1.AssignmentThreeListComponent,
+            assignment3_viewUser_1.viewSingleUser],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);

@@ -30,6 +30,14 @@ let DbConnComponent = class DbConnComponent {
             return response.json();
         });
     }
+    getSingleUser(id) {
+        console.log("hi");
+        console.log(id);
+        return this.http.get('http://api.qshore.com/view-user/' + id)
+            .map((response) => {
+            return response.json();
+        });
+    }
 };
 DbConnComponent = __decorate([
     core_1.Injectable(),

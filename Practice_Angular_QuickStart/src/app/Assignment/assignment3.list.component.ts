@@ -11,7 +11,9 @@ import{DbConnComponent} from './../Services/services.component';
 
 export class AssignmentThreeListComponent{
 
-    userData : any;
+     userData : any;
+     status: any;
+     
 
     constructor(public dbConn : DbConnComponent ){
          this.displayListOfUsers();
@@ -27,26 +29,42 @@ export class AssignmentThreeListComponent{
         return myStles;
     }
 
-    displayListOfUsers(){
+    displayListOfUsers():any{
         this.dbConn.getListUsers()
         .subscribe(
             (result:any) => {
-                console.log(result);
+                //console.log(result);
                 this.userData = result.data;
-                console.log(this.userData);
+                //console.log(this.userData);
             }
         );
+
+        return this.userData;
     }
 
     createUser(user : any): boolean {
-
+       
         console.log(user.fname);
         this.dbConn.insertUser(user)
         .subscribe(
             (result:any) => {
                console.log(result.msg);
+               this.status = result.status;
             });
-            return true;
+            return this.status;
+     }
+
+     viewUser(id:any) : any{
+           console.log("hello");
+           this.dbConn.getSingleUser(id)
+           .subscribe( (result:any) =>{
+                       this.userData =  result.data;
+                       this.status = result.status;
+                   }
+        );
+  
+       return this.userData;
+        
      }
 
     

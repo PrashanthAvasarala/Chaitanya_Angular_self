@@ -33,11 +33,6 @@ const forms_1 = require("@angular/forms");
 const assignment3_list_component_1 = require("./assignment3.list.component");
 const services_component_1 = require("./../Services/services.component");
 let AssignmentThreeComponent = class AssignmentThreeComponent {
-    /* firstName : any;
-    LastName: any;
-    age: any;
-    email : any;
-    password : any;  */
     /*
        With the formBuilder we can group the all the form Input  elements at once,
        No need of creating the
@@ -67,11 +62,6 @@ let AssignmentThreeComponent = class AssignmentThreeComponent {
         });
     }
     onSubmit() {
-        /*  this.firstName = this.entryForm.get('fname').value;
-         this.LastName = this.entryForm.get('lname').value;
-         this.age = this.entryForm.get('age').value;
-         this.email = this.entryForm.get('email').value;
-         this.password = this.entryForm.get('password').value; */
         var entries = {
             fname: this.entryForm.get('fname').value,
             lname: this.entryForm.get('lname').value,
@@ -82,7 +72,7 @@ let AssignmentThreeComponent = class AssignmentThreeComponent {
         var conf = this.assignThreeListComp.createUser(entries);
         window.alert("Successfully Inserted !!");
         if (conf)
-            location.href = 'http://localhost:3000/assignment3/list';
+            location.href = 'http://localhost:3002/assignment3/list';
     }
 };
 AssignmentThreeComponent = __decorate([

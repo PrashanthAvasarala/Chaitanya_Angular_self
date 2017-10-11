@@ -1,3 +1,7 @@
+<!--
+    How to append params to URL "https://stackoverflow.com/questions/42491985/how-to-append-url-with-parameter-in-angular-2-type-script"
+    "https://stackoverflow.com/questions/39245848/how-to-set-query-parameters-to-url-angular2"
+-->
 <table [ngStyle] = "tableData()" border="1">
         <tr [ngStyle] = "tableData()" >
             <th [ngStyle] = "tableData()" >Id</th>
@@ -16,7 +20,7 @@
             <td >{{user.email}}</td>
             <td >{{user.password}}</td>
             <td>
-                <span (click)="getSingleUser(user.id)">veiw</span> &nbsp;&nbsp;&nbsp;
+                <span ><a [routerLink]="['/assignment3/user']" [queryParams]="{ id: user.id }" (click)="viewUser(user.id)">view</a></span> &nbsp;&nbsp;&nbsp;
                 <span (click)="updateUser(user.id)">update</span> &nbsp;&nbsp;&nbsp;
                 <span (click)="deleteUser(user.id)">delete</span> &nbsp;&nbsp;&nbsp;
             </td>

@@ -1,0 +1,25 @@
+
+
+   
+	<table border="1">
+		<tr>
+			<th>Id</th>
+			<th>Fname</th>
+			<th>lname</th>
+			<th>age</th>
+			<th>Email</th>
+			<th>Password</th>
+		</tr>
+		<tr >
+            <!--Why I am using '?' is ,if userData variable is decalred before evaluating the binding or id , fname ,lname are not declared in userData
+                 and they are fetched by http calls. so intially these properties are not defiend in userData as tuple ,
+                we will get  " property undefined error"
+                When the value resolves the binding will be updated by the change tracking.-->
+			<td>{{userData?.id}}</td>
+			<td>{{userData?.fname}}</td>
+			<td>{{userData?.lname}}</td>
+			<td>{{userData?.age}}</td>
+			<td>{{userData?.email}}</td>
+			<td>{{userData?.password}}</td>
+		</tr>
+	</table>
