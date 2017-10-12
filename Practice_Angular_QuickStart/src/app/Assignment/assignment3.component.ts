@@ -57,7 +57,7 @@ export class AssignmentThreeComponent {
          this.entryForm = this.fb.group({
             fname : ['',Validators.compose([Validators.required,Validators.pattern('[A-Za-z\\s]+')])],
             lname: ['',Validators.compose([Validators.required,Validators.pattern('[A-Za-z\\s]+')])],
-            age : ['',Validators.compose([Validators.required,Validators.pattern('([0]?[1-9]{1,2})+')])],
+            age : ['',Validators.compose([Validators.required,Validators.pattern('(\\d?[1-9]|[1-9]0)+')])], // menas first part - \d?(it should be [0-9]) and second digit[1-9] or second part - first digit [1-9] and second digit shoud be 0
             email : ['',Validators.compose([Validators.required,Validators.pattern('([\\w-\.]+@([\\w-]+\.)+[\\w-])+')])], /*Need to give \\ for the escape charecters after compling becomes \*/
             password : ['',Validators.compose([Validators.required,Validators.pattern("((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%])(?!.*\\s).{6,16})+")])]
             
@@ -77,10 +77,10 @@ export class AssignmentThreeComponent {
             password : this.entryForm.get('password').value,
         }
 
-       var conf =  this.assignThreeListComp.createUser(entries);
-       
-       window.alert("Successfully Inserted !!");
-       if(conf)    location.href = 'http://localhost:3002/assignment3/list';
+        
+         window.alert("Successfully Inserted !!");
+             
+       if(this.assignThreeListComp.createUser(entries))    location.href = 'http://localhost:3000/assignment3/list';
           
      }  
     

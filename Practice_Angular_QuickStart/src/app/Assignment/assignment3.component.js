@@ -56,7 +56,7 @@ let AssignmentThreeComponent = class AssignmentThreeComponent {
         this.entryForm = this.fb.group({
             fname: ['', forms_1.Validators.compose([forms_1.Validators.required, forms_1.Validators.pattern('[A-Za-z\\s]+')])],
             lname: ['', forms_1.Validators.compose([forms_1.Validators.required, forms_1.Validators.pattern('[A-Za-z\\s]+')])],
-            age: ['', forms_1.Validators.compose([forms_1.Validators.required, forms_1.Validators.pattern('([0]?[1-9]{1,2})+')])],
+            age: ['', forms_1.Validators.compose([forms_1.Validators.required, forms_1.Validators.pattern('(\\d?[1-9]|[1-9]0)+')])],
             email: ['', forms_1.Validators.compose([forms_1.Validators.required, forms_1.Validators.pattern('([\\w-\.]+@([\\w-]+\.)+[\\w-])+')])],
             password: ['', forms_1.Validators.compose([forms_1.Validators.required, forms_1.Validators.pattern("((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%])(?!.*\\s).{6,16})+")])]
         });
@@ -69,10 +69,9 @@ let AssignmentThreeComponent = class AssignmentThreeComponent {
             email: this.entryForm.get('email').value,
             password: this.entryForm.get('password').value,
         };
-        var conf = this.assignThreeListComp.createUser(entries);
         window.alert("Successfully Inserted !!");
-        if (conf)
-            location.href = 'http://localhost:3002/assignment3/list';
+        if (this.assignThreeListComp.createUser(entries))
+            location.href = 'http://localhost:3000/assignment3/list';
     }
 };
 AssignmentThreeComponent = __decorate([
