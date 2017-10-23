@@ -51,6 +51,7 @@ export class AssignmentThreeComponent {
        No( /,^,$)
        Stack-Over-flow - "https://stackoverflow.com/questions/41768721/regex-in-angular-2-form-validators-producing-different-results-when-argument-is"
        Cheat Sheet for RegExp : "http://www.rexegg.com/regex-quickstart.html"
+        Regular expressions 1. Special characters - "http://www.fon.hum.uva.nl/praat/manual/Regular_expressions_1__Special_characters.html"
    */
   
      createForm(){
@@ -59,7 +60,8 @@ export class AssignmentThreeComponent {
             lname: ['',Validators.compose([Validators.required,Validators.pattern('[A-Za-z\\s]+')])],
             age : ['',Validators.compose([Validators.required,Validators.pattern('(\\d?[1-9]|[1-9]0)+')])], // menas first part - \d?(it should be [0-9]) and second digit[1-9] or second part - first digit [1-9] and second digit shoud be 0
             email : ['',Validators.compose([Validators.required,Validators.pattern('([\\w-\.]+@([\\w-]+\.)+[\\w-])+')])], /*Need to give \\ for the escape charecters after compling becomes \*/
-            password : ['',Validators.compose([Validators.required,Validators.pattern("((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%])(?!.*\\s).{6,16})+")])]
+            password : ['',Validators.compose([Validators.required,Validators.pattern("((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%])(?!.*\\s).{6,16})+")])] 
+            // If we see for password validation after imposing the condition {6,16} if we are not closing with ')' between '{6,16}' and '+' we get  -- > SyntaxError: Invalid regular expression Nothing to repeat 
             
          });
         
