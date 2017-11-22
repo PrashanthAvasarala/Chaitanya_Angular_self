@@ -11,6 +11,7 @@ const platform_browser_1 = require("@angular/platform-browser");
 const router_1 = require("@angular/router");
 const forms_1 = require("@angular/forms");
 const http_1 = require("@angular/http");
+const ng2_rating_1 = require("ng2-rating");
 const app_component_1 = require("./app.component");
 const fruits_component_1 = require("./fruits.component");
 const products_component_1 = require("./products.component");
@@ -22,6 +23,7 @@ const assignment2_component_1 = require("./Assignment/assignment2.component");
 const assignment3_component_1 = require("./Assignment/assignment3.component");
 const assignment3_list_component_1 = require("./Assignment/assignment3.list.component");
 const assignment3_viewUser_1 = require("./Assignment/assignment3.viewUser");
+const star_component_1 = require("./Assignment/star.component");
 const appRoutes = [
     { path: '', component: app_component_1.HomeComponent },
     { path: 'fruit', component: fruits_component_1.FruitComponent },
@@ -43,7 +45,8 @@ AppModule = __decorate([
             router_1.RouterModule.forRoot(appRoutes),
             forms_1.FormsModule,
             forms_1.ReactiveFormsModule,
-            http_1.HttpModule],
+            http_1.HttpModule,
+            ng2_rating_1.RatingModule],
         declarations: [app_component_1.AppComponent,
             app_component_1.HomeComponent,
             products_component_1.ProductComponent,
@@ -55,7 +58,8 @@ AppModule = __decorate([
             assignment2_component_1.AssignmentTwoComponent,
             assignment3_component_1.AssignmentThreeComponent,
             assignment3_list_component_1.AssignmentThreeListComponent,
-            assignment3_viewUser_1.viewSingleUser],
+            assignment3_viewUser_1.viewSingleUser,
+            star_component_1.StarRating],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);

@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import {RouterModule, Routes} from '@angular/router';
 import {FormsModule , ReactiveFormsModule} from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import {RatingModule} from "ng2-rating";
 
 
 import { AppComponent,HomeComponent } from './app.component';
@@ -18,6 +19,7 @@ import {AssignmentTwoComponent} from './Assignment/assignment2.component';
 import {AssignmentThreeComponent} from './Assignment/assignment3.component';
 import {AssignmentThreeListComponent} from './Assignment/assignment3.list.component';
 import {viewSingleUser} from './Assignment/assignment3.viewUser';
+import {StarRating} from './Assignment/star.component';
 
 
 
@@ -40,7 +42,8 @@ const appRoutes: Routes = [
             RouterModule.forRoot(appRoutes),
             FormsModule,
             ReactiveFormsModule,
-            HttpModule],
+            HttpModule,
+            RatingModule],
   declarations: [AppComponent,
                  HomeComponent,
                  ProductComponent,
@@ -52,7 +55,8 @@ const appRoutes: Routes = [
                  AssignmentTwoComponent,
                  AssignmentThreeComponent,
                  AssignmentThreeListComponent,
-                 viewSingleUser],
+                 viewSingleUser,
+                 StarRating],
                  
   bootstrap: [AppComponent]
 })

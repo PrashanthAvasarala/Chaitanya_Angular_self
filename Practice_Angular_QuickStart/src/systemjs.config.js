@@ -25,7 +25,9 @@
 
       // other libraries
       'rxjs':                      'npm:rxjs',
-      'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js'
+      'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
+      /* For star rating */
+      "ng2-rating": "node_modules/ng2-rating"
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {
@@ -39,7 +41,11 @@
       },
       rxjs: {
         defaultExtension: 'js'
-      }
-    }
+      }, /* For star rating */
+      "ng2-rating": {
+        "main": "index.js",
+        "defaultExtension" : "js" 
+      },
+    },
   });
 })(this);

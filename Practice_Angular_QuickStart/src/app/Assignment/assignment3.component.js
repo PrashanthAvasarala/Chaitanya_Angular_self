@@ -51,6 +51,7 @@ let AssignmentThreeComponent = class AssignmentThreeComponent {
         No( /,^,$)
         Stack-Over-flow - "https://stackoverflow.com/questions/41768721/regex-in-angular-2-form-validators-producing-different-results-when-argument-is"
         Cheat Sheet for RegExp : "http://www.rexegg.com/regex-quickstart.html"
+         Regular expressions 1. Special characters - "http://www.fon.hum.uva.nl/praat/manual/Regular_expressions_1__Special_characters.html"
     */
     createForm() {
         this.entryForm = this.fb.group({
