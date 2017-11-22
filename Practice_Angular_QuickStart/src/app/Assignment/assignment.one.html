@@ -37,3 +37,27 @@
 <br>
 <hr>
 <x-star-rating></x-star-rating>
+
+ 
+
+ 
+        <h3>
+            Buttons icons (FontAwesome)
+        </h3>
+    
+    
+        
+        <datetime [(ngModel)]="date4" [timepicker]="{icon: 'fa fa-clock-o'}"
+                  [datepicker]="{icon: 'fa fa-calendar'}" [hasClearButton]="true">
+        </datetime>
+        <h5><strong>ngModel:</strong> {{getDate(date4) | date: "medium"}}</h5>
+   
+
+
+ 
+
+ 
+    
+    
+
+        

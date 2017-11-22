@@ -12,6 +12,7 @@ const router_1 = require("@angular/router");
 const forms_1 = require("@angular/forms");
 const http_1 = require("@angular/http");
 const ng2_rating_1 = require("ng2-rating");
+const ng2_datetime_1 = require("ng2-datetime/ng2-datetime");
 const app_component_1 = require("./app.component");
 const fruits_component_1 = require("./fruits.component");
 const products_component_1 = require("./products.component");
@@ -46,7 +47,8 @@ AppModule = __decorate([
             forms_1.FormsModule,
             forms_1.ReactiveFormsModule,
             http_1.HttpModule,
-            ng2_rating_1.RatingModule],
+            ng2_rating_1.RatingModule,
+            ng2_datetime_1.NKDatetimeModule],
         declarations: [app_component_1.AppComponent,
             app_component_1.HomeComponent,
             products_component_1.ProductComponent,

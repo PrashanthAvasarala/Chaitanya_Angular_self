@@ -52,6 +52,9 @@ let AssignmentOneComponent = class AssignmentOneComponent {
         this.textChange = "";
         this.text = "";
     }
+    getDate(dt) {
+        return dt && dt.getTime();
+    }
 };
 AssignmentOneComponent = __decorate([
     core_1.Component({

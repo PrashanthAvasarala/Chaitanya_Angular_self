@@ -13,6 +13,8 @@ export class AssignmentOneComponent {
   buttonClick: boolean = false;
   textNote: any = " ";
   textChange: any = "";
+  date4: Date;
+  
 
 
   /* Just like Java constructor is invoked first when complied same as when the component is created this 
@@ -61,5 +63,9 @@ export class AssignmentOneComponent {
     this.textChange = "";
     this.text = "";
   }
+
+  getDate(dt: Date): number {
+    return dt && dt.getTime();
+}
 
 }

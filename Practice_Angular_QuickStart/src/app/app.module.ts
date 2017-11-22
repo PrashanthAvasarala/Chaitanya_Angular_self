@@ -5,7 +5,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import {RouterModule, Routes} from '@angular/router';
 import {FormsModule , ReactiveFormsModule} from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import {RatingModule} from "ng2-rating";
+import {RatingModule} from 'ng2-rating';
+import { NKDatetimeModule } from 'ng2-datetime/ng2-datetime';
+
+
+
 
 
 import { AppComponent,HomeComponent } from './app.component';
@@ -43,7 +47,9 @@ const appRoutes: Routes = [
             FormsModule,
             ReactiveFormsModule,
             HttpModule,
-            RatingModule],
+            RatingModule,
+            NKDatetimeModule],
+
   declarations: [AppComponent,
                  HomeComponent,
                  ProductComponent,
